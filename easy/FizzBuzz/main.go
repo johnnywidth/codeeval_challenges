@@ -11,10 +11,9 @@ import (
 )
 
 var input [][]string
-var output [][]string
 
 func main() {
-	if err := prepareInputData(); err != nil {
+	if err := prepareInputData(os.Args[1]); err != nil {
 		log.Fatal(err)
 	}
 	for _, _input := range input {
@@ -36,15 +35,13 @@ func main() {
 				_output = append(_output, strconv.Itoa(i))
 			}
 		}
-		output = append(output, _output)
-	}
-	if err := writeOutputDataToFile(); err != nil {
-		log.Fatal(err)
+		outputLine := strings.Join(_output, " ")
+		fmt.Println(outputLine)
 	}
 }
 
-func prepareInputData() error {
-	file, err := os.Open("./input.txt")
+func prepareInputData(fileName string) error {
+	file, err := os.Open(fileName)
 	if err != nil {
 		return err
 	}
@@ -58,21 +55,4 @@ func prepareInputData() error {
 		input = append(input, lineNumbers)
 	}
 	return scanner.Err()
-}
-
-func writeOutputDataToFile() error {
-	file, err := os.Create("output.txt")
-	if err != nil {
-		return err
-	}
-	defer file.Close()
-	w := bufio.NewWriter(file)
-	for _, _output := range output {
-		outputLine := strings.Join(_output, " ")
-		fmt.Fprintln(w, outputLine)
-		if err := w.Flush(); err != nil {
-			return err
-		}
-	}
-	return nil
 }
