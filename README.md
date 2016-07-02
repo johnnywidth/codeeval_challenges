@@ -6,4 +6,5 @@ Complete challenges
   * [Prime Palindrome](https://www.codeeval.com/open_challenges/3/)
 
 - Moderate
-  * [Longest lines](https://www.codeeval.com/open_challenges/2/)
+  * [Longest Lines](https://www.codeeval.com/open_challenges/2/)
+  * [Reverse and Add](https://www.codeeval.com/open_challenges/45/)

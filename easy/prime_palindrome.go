@@ -29,7 +29,7 @@ func main() {
             right = a[(l/2 + 1):]
         }
 
-        rRight := func(s string) string {
+        reverse := func(s string) string {
             size := len(s)
             buf := make([]byte, size)
             for start := 0; start < size; {
@@ -40,7 +40,7 @@ func main() {
             return string(buf)
         }
 
-        if left == rRight(right) {
+        if left == reverse(right) {
             ni := big.NewInt(int64(i))
             if ni.ProbablyPrime(1) {
                 m := ni.Int64()
