@@ -9,3 +9,6 @@ Complete challenges
   * [Longest Lines](https://www.codeeval.com/open_challenges/2/)
   * [Remove Characters](https://www.codeeval.com/open_challenges/13/)
   * [Reverse and Add](https://www.codeeval.com/open_challenges/45/)
+
+- Hard
+  * [Longest Common Subsequence](https://www.codeeval.com/open_challenges/6/)
